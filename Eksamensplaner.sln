@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eksamensplaner", "Eksamensplaner\Eksamensplaner.csproj", "{DC79CB77-F19B-4841-906E-E67BAEB73C5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eksamensplaner.Web", "Eksamensplaner.Web\Eksamensplaner.Web.csproj", "{DC79CB77-F19B-4841-906E-E67BAEB73C5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eksamensplaner.Core", "Eksamensplaner.Core\Eksamensplaner.Core.csproj", "{C30D30E0-81C9-4A42-A9CF-C6E05C92AA38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eksamensplaner.Infrastructure", "Eksamensplaner.Infrastructure\Eksamensplaner.Infrastructure.csproj", "{EAB1F81C-6507-4DB3-A743-6F6AAF781237}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +16,13 @@ Global
 		{DC79CB77-F19B-4841-906E-E67BAEB73C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC79CB77-F19B-4841-906E-E67BAEB73C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC79CB77-F19B-4841-906E-E67BAEB73C5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C30D30E0-81C9-4A42-A9CF-C6E05C92AA38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C30D30E0-81C9-4A42-A9CF-C6E05C92AA38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C30D30E0-81C9-4A42-A9CF-C6E05C92AA38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C30D30E0-81C9-4A42-A9CF-C6E05C92AA38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAB1F81C-6507-4DB3-A743-6F6AAF781237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAB1F81C-6507-4DB3-A743-6F6AAF781237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAB1F81C-6507-4DB3-A743-6F6AAF781237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAB1F81C-6507-4DB3-A743-6F6AAF781237}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
