@@ -24,6 +24,14 @@ body {
     color: #fff;
 }
 
+
+.logo {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bootom: 10px;
+    overflow: hidden;
+}
+
 .header {
     background-color: #000;
     color: #ffec80;

@@ -60,7 +60,10 @@ body {
     color: #fff !important;
 }
 
-.container {
-    color: #ffec80;
+.title {
+    color: #ffffff; !important;
     font-family: Zichtbaar,Zichtbaar, sans-serif; !important;
+    align-items: center; !important;
+    padding-top: 1rem;
+    margin-bottom: 20px;
 }
