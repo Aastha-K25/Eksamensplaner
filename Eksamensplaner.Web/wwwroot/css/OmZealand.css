@@ -24,14 +24,6 @@ body {
     color: #fff;
 }
 
-
-.logo {
-    width: 3.5rem;
-    height: 3.5rem;
-    margin-bootom: 10px;
-    overflow: hidden;
-}
-
 .header {
     background-color: #000;
     color: #ffec80;
@@ -61,7 +53,7 @@ body {
 .nav-link {
     color: #ffec80 !important;
     font-weight: 500;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .nav-link:hover {
@@ -71,4 +63,30 @@ body {
 .container {
     color: #ffec80;
     font-family: Zichtbaar,Zichtbaar, sans-serif; !important;
+}
+
+.Login {
+    margin-left: 750px;
+    margin-right: 0px; !important;
+    background-color: #000 !important;
+}
+
+.button{
+    color: #ffec80 !important;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 1px;
+    background-color: #000 !important;
+    padding: 10px 30px;
+    border-bottom: 3px solid #ffec80; !important;
+}
+
+.button:hover {
+    color: #fff !important;
+}
+
+.sti h6 {
+    color: #f8f9fa; !important;
+    background-color: #000000;
+    font-weight: lighter;
 }
