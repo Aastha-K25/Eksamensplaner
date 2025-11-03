@@ -3,7 +3,13 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+<div class="hero">
+    <h1>Er du klar til at teste studielivet?</h1>
+    <p>Læs om vores skole og oplev hverdagen som studerende for en dag</p>
+    <button class="OmZealandKnap">
+        <a class="nav-link text-dark" asp-area="" asp-page="/OmZealand">Læs om Zealand</a>
+    </button>
 </div>
