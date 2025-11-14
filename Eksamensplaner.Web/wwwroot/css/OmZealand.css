@@ -89,3 +89,64 @@ button, input, optgroup, select, textarea {
     background-color: #fff !important;
     color: #000 !important;
 }
+
+.title {
+    color: white;
+    font-size: 35px;
+    line-height: 1.5em;
+    font-family:'Zichtbaar', Arial, sans-serif;;
+    font-weight: bolder;
+    padding-top: 1rem;
+    margin-bottom: 20px;
+}
+
+.Teksten {
+    color: white;
+    line-height: 1.5em;
+    font-family:'Zichtbaar', Arial, sans-serif;;
+    padding-top: 1rem;
+    margin-bottom: 20px;
+}
+
+
+.Maps-text-and-image {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.Small-picture img {
+    overflow: hidden;
+    width: auto;
+    height: 20vw;
+    margin-bottom: 15px;
+    position: relative !important;
+}
+
+.Maps-text-and-image p {
+    max-width: 800px;
+    color: white;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-family:'Zichtbaar', Arial, sans-serif;;
+    margin-bottom: 20px;
+}
+
+.Maps-text-and-image h5{
+    color: white;
+    font-size: 35px;
+    line-height: 1.5em;
+    font-family:'Zichtbaar', Arial, sans-serif;;
+    font-weight: bolder;
+    padding-top: 1rem;
+    margin-bottom: 15px;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
