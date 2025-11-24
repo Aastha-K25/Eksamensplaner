@@ -3,88 +3,52 @@
 @{
     ViewData["Title"] = "AdminLogInd";
 }
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] AdminLogInd </title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/LærerLogInd.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Eksamensplaner.styles.css" asp-append-version="true" />
-</head>
+
 <!DOCTYPE html>
-
-<form method="post" action="/Teacher/Schedule">
-    <label for="teacher-id">Brugernavn</label>
-    <input type="text" id="teacher-id" name="TeacherId" required></input>
-    
-    <label for="teacher-password">Adgangskode</label>
-    <input type="password" id="teacher-password" name="Password" required>
-        
-    <button type="submit">Log ind som underviser</button>
-</form>
-@{
-    ViewData["Title"] = "AdminLogInd";
-}
-<html>
+<html lang="da">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] AdminLogInd </title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/StuderneLogInd.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Eksamensplaner.styles.css" asp-append-version="true" />
-</head>
-<!DOCTYPE html>
+    <title>@ViewData["Title"]</title>
 
-<form method="post" action="/Student/Schedule">
-    <label for="Student-id">Studienummer</label>
-    <input type="text" id="student-id" name="StudentId" required>
-        
-    <label for="student-password">Adgangskode</label>
-    <input type="password" id="student-password" name="Password" required>
-            
-    <button type="submit">Log ind som studerende</button>
-</form>
-
-@{
-    ViewData["Title"] = "AdminLogInd";
-}
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] AdminLogInd </title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/AdmingLogInd.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Eksamensplaner.styles.css" asp-append-version="true" />
-</head>
-<!DOCTYPE html>
-
-<form method="post" action="/Admin/Exams">
-    <label for="admin-id">Brugernavn</label>
-    <input type="text" id="admin-id" name="AdminID" required>
-        
-    <label for="admin-password">Adgangskode</label>
-    <input type="password" id="admin-password" name="Password" required>
-    
-    <button type="submit">Log ind som administration</button>
-</form>
-
-@{
-    ViewData["Title"] = "Log Ind";
-}
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] Log ind </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/LogInd.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Eksamensplaner.styles.css" asp-append-version="true" />
 </head>
 
 <body>
-<h1>Log ind</h1>
+<section class="login-section">
+    <h1 class="login-container">
+        
+        <div class="login-box">
+            <h2>Studerende</h2>
+            
+            <form method="post" action="/Student/Schedule">
+                <label for="student-username">Brugernavn</label>
+                <input type="text" id="student-username" name="StudentUserName" placeholder="Skriv brugernavn" required>
+                 
+                <label for="student-password">Adgangskode</label>
+                <input type="password" id="student-password" name="StudentPassword" placeholder="Skriv adgangskode" required>
+                        
+                <button type="submit">Log ind</button>
+            </form>
+        </div>
+        
+        <div class="login-box">      **
+            <h2>Underviser</h2>
+            
+            <form method="post" action="/Teacher/Schedule">
+                <label for="teacher-username">Brugernavn</label>
+                <input type="text" id="teacher-username" name="TeacherUserName" placeholder="Skriv brugernavn" required>
+                    
+                <label for="teacher-password">Adgangskode</label>
+                <input type="password" id="teacher-password" name="TeacherPassword" placeholder="Skriv adgangskode" required>
+                        
+                <button type="submit">Log ind</button>
+            </form>
+        </div>
+        
+        
+    </h1>
+</section>
+
 </body>
-</html>

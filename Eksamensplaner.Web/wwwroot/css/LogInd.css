@@ -1,255 +1,127 @@
-/* ========== RESET ========== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    color: #1f2937;
+    background-color: #000000 !important;
 }
-
-/* ========== LOGIN SEKTION (fælles for alle) ========== */
+/* Wrapper til hele login-området */
 .login-section {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
+    padding: 4rem 2rem;
+}
+header,
+nav.navbar {
+    background-color: #000000 !important;
+}
+/* Gør menu-links gule */
+header .navbar-nav .nav-link {
+    color: #ffd54a !important;    /* samme gul som ZEALAND */
 }
 
-/* Overskrift på hver login-side */
-.login-header {
-    text-align: center;
+/* Hover-effekt (valgfrit) */
+header .navbar-nav .nav-link:hover {
+    color: #ffe27a !important;    /* lidt lysere gul ved hover */
+}
+
+
+/* Stor "Log ind" overskrift */
+.login-title {
+    color: #ffd54a;              /* gul */
+    font-size: 2.5rem;
     margin-bottom: 2rem;
+    margin-left: 2rem;
 }
 
-.login-header h1 {
-    font-size: 2.2rem;
-    color: #111827;
-}
-
-.login-header p {
-    margin-top: 0.5rem;
-    color: #4b5563;
-}
-
-/* Container der holder boksen */
-.login-cards {
+/* Flex-container til de tre bokse */
+.login-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+    gap: 2rem;
 }
 
-/* ========== LOGIN BOKS – fælles styling for alle typer ========== */
+/* Selve boksen */
 .login-box {
-    background: rgba(255, 255, 255, 0.90);
-    backdrop-filter: blur(4px);
-    border-radius: 1rem;
-    padding: 1.8rem 2rem;
-    width: 350px;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
+    background-color: #000000;   /* sort, matcher baggrund */
+    border: 1px solid #ffd54a;   /* gul kant */
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    width: 260px;
 }
 
-/* Titel i login-boksen */
+/* Titel i boksen (Studerende/Underviser/Administration) */
 .login-box h2 {
+    color: #ffd54a;              /* gul tekst */
     font-size: 1.4rem;
-    margin-bottom: 0.4rem;
-}
-
-/* Beskrivelses-tekst under titel */
-.login-box p {
-    font-size: 0.95rem;
-    color: #4b5563;
     margin-bottom: 1rem;
 }
 
-/* Formular */
+/* Formular-indhold */
 .login-box form {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
 }
 
-/* Labels */
+/* Labels over felterne */
 .login-box label {
-    font-size: 0.85rem;
+    color: #ffd54a;              /* gul tekst */
+    font-size: 0.9rem;
     font-weight: 600;
 }
 
-/* Inputs */
+/* Felter til brugernavn/adgangskode */
 .login-box input {
-    padding: 0.6rem;
-    font-size: 0.9rem;
-    border-radius: 0.5rem;
-    border: 1px solid #d1d5db;
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    background-color: #111111;   /* mørk baggrund inde i feltet */
+    color: #ffffff;              /* HVID tekst når man skriver */
     outline: none;
-    transition: 0.2s;
+    font-size: 0.9rem;
 }
 
-/* Fokus effekt */
+/* Placeholder-tekst inde i feltet */
+.login-box input::placeholder {
+    color: #9ca3af;              /* lys grå */
+}
+
+/* Fokus-effekt når man klikker i feltet */
 .login-box input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    border-color: #ffd54a;
+    box-shadow: 0 0 0 2px rgba(255, 213, 74, 0.35);
 }
 
-/* Knap */
+/* Login-knappen */
 .login-box button {
-    margin-top: 0.5rem;
-    padding: 0.75rem;
+    margin-top: 0.8rem;
+    padding: 0.6rem 0.8rem;
     border-radius: 999px;
     border: none;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    font-size: 0.95rem;
-    font-weight: 600;
     cursor: pointer;
-    color: white;
-    transition: 0.15s;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background-color: #ffd54a;   /* gul knap */
+    color: #000000;              /* sort tekst */
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-/* Hover */
+/* Hover-effekt på knap */
 .login-box button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* Active click */
-.login-box button:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
-}
-
-/* ========== FARVER FOR HVER LOGIN-TYPE (valgfrit) ========== */
-
-/* Studerende */
-.student-theme h2 {
-    color: #2563eb;
-}
-.student-theme button {
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-}
-
-/* Underviser */
-.teacher-theme h2 {
-    color: #059669;
-}
-.teacher-theme button {
-    background: linear-gradient(135deg, #059669, #047857);
-}
-
-/* Administration */
-.admin-theme h2 {
-    color: #dc2626;
-}
-.admin-theme button {
-    background: linear-gradient(135deg, #dc2626, #b91c1c);
-}
-
-/* ========== RESPONSIV ========== */
+/* Mobil: bokse fylder bredden */
 @media (max-width: 768px) {
+    .login-title {
+        margin-left: 0;
+        text-align: center;
+    }
+
     .login-box {
         width: 100%;
-        max-width: 350px;
+        max-width: 320px;
     }
-}
-
-
-
-html {
-    font-size: 14px;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    background-color: #000;
-    color: #ffec80;
-    font-family: 'Zichtbaar', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar {
-    background-color: #000 !important;
-    border-bottom: 2px solid #ffec80;
-    padding: 10px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-brand {
-    font-size: 26px;
-    font-weight: bold;
-    color: #ffec80 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.navbar-brand:hover {
-    color: #fff !important;
-}
-
-.nav-link {
-    color: #ffec80 !important;
-    font-size: 18px;
-    margin-left: 20px;
-    transition: color 0.2s ease-in;
-}
-
-.nav-link:hover {
-    color: #fff !important;
-}
-
-footer {
-    border-top: 1px solid #ffec80;
-    color: #ffec80;
-    padding: 10px;
-    font-size: 14px;
-
-}
-
-button, input, optgroup, select, textarea {
-    background-color: black;
-    border: black;
-}
-
-.Login a {
-    background-color: #ffec80 !important;
-    color: #000 !important;
-    padding: 8px 22px;
-    border-radius: 4px;
-    font-weight: bold;
-    text-decoration: none;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;
-    font-size: 16px;
-}
-
-.Login a:hover {
-    background-color: #fff !important;
-    color: #000 !important;
 }
 
 
