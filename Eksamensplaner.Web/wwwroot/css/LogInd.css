@@ -6,6 +6,12 @@ body {
 
 .login-section {
     padding: 4rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 150px;
 }
 header,
 nav.navbar {
@@ -27,7 +33,7 @@ header .navbar-nav .nav-link {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .login-box {
@@ -35,14 +41,15 @@ header .navbar-nav .nav-link {
     border: 1px solid #ffec80;
     border-radius: 10px;
     padding: 1.5rem 1.75rem;
-    width: 260px;
+    width: 370px;
 }
 
 .login-box h2 {
-    color: #ffec80;
+    color: #ffffff;
     font-size: 1.4rem;
     margin-bottom: 1rem;
 }
+
 
 .login-box form {
     display: flex;
@@ -51,7 +58,7 @@ header .navbar-nav .nav-link {
 }
 
 .login-box label {
-    color: #ffec80;
+    color: #ffffff;
     font-size: 0.9rem;
     font-weight: 600;
 }
@@ -90,6 +97,8 @@ header .navbar-nav .nav-link {
 }
 
 .login-box button:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
     transform: translateY(-1px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
@@ -103,4 +112,6 @@ header .navbar-nav .nav-link {
         width: 100%;
         max-width: 320px;
     }
+    
+    
 }
