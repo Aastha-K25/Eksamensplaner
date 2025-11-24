@@ -1,19 +1,45 @@
 @page
-@model Eksamensplaner.Pages.AdminLogInd
-
+@model PrivacyModel
 @{
-    Layout = null;
+    ViewData["Title"] = "AdminLogInd";
 }
-
-<!DOCTYPE html>
-
 <html>
 <head>
-    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] AdminLogInd </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/AdmingLogInd.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Eksamensplaner.styles.css" asp-append-version="true" />
 </head>
-<body>
-<div>
+<!DOCTYPE html>
+
+<form method="post" action="/Student/Schedule">
+    <label for="Student-id">Studienummer</label>
+    <input type="text" id="student-id" name="StudentId" required>
+        
+    <label for="student-password">Adgangskode</label>
+    <input type="password" id="student-password" name="Password" required>
+            
+    <button type="submit">Log ind som studerende</button>
+</form>
+
+
+<form method="post" action="/Teacher/Schedule">
+    <label for="teacher-id">Brugernavn</label>
+    <input type="text" id="teacher-id" name="TeacherId" required></input>
     
-</div>
-</body>
-</html>
+    <label for="teacher-password">Adgangskode</label>
+    < type="password" id="teacher-password" name="Password" required>
+        
+    <button type="submit">Log ind som underviser</button>
+</form>
+
+
+<form method="post" action="/Admin/Exams">
+    <label for="admin-id">Brugernavn</label>
+    <input type="text" id="admin-id" name="AdminID" required>
+        
+        <label for="admin-password"Ad
+    </input>
+</form>
