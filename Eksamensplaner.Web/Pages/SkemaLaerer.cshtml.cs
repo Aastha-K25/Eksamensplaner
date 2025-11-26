@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Eksamensplaner.Pages;
 
-public class LærerLogInd : PageModel
+public class SkemaLaerer : PageModel
 {
     public void OnGet()
     {
