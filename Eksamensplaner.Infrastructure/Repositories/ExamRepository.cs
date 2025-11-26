@@ -1,17 +1,59 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using Eksamensplaner.Core.Models;
-using Microsoft.Extensions.Configuration;
-namespace Eksamensplaner.Infrastructure.Repositories;
+using Microsoft.Data.SqlClient;
 
-public class ExamRepository
+namespace Eksamensplaner.Infrastructure.Repositories
 {
-    private readonly string _connectionString;
-
-    public ExamRepository(IConfiguration configuration)
+    public class ExamRepository
     {
-        _connectionString = configuration.GetConnectionString("DefaultConnection");
-    }
+        private readonly string _connectionString;
 
-    
+        public ExamRepository(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
+        public List<Eksamen> GetByFilter (int semester, string type)
+        {
+            List<Eksamen> list = new List<Eksamen>();
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                string sql =
+                    "SELECT Id, Uddannelse, Aktivitet, Semester, Type " +
+                    "FROM Exams " +
+                    "Where (@semester = 0 OR Semester = @semester)" +
+                    "AND (@type = '' OR Type = @type)";
+
+                using (SqlCommand cmd = new SqlCommand(sql, connection))
+                {
+                    cmd.Parameters.AddWithValue("@semester", semester);
+
+                    if (type == null)
+                    {
+                        type = "";
+                    }
+                    
+                    cmd.Parameters.AddWithValue("@type", type);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        Eksamen e = new Eksamen();
+                        e.Id = (int)reader["Id"];
+                        e.Uddannelse = reader["Uddannelse"].ToString();
+                        e.Aktivitet = reader["Aktivitet"].ToString();
+                        e.Semester = (int)reader["Semester"];
+                        e.Type = reader["Type"].ToString();
+
+                        list.Add(e);
+                    }
+                }
+            }
+
+            return list;
+        }
+    }
 }

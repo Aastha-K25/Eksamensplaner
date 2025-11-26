@@ -1,7 +1,13 @@
+using Eksamensplaner.Infrastructure.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Razor Pages
 builder.Services.AddRazorPages();
+
+string connectionString = Environment.GetEnvironmentVariable("EKSAMEN_DB_CONNECTION");
+
+builder.Services.AddScoped<ExamRepository>(_ => new ExamRepository(connectionString));
 
 var app = builder.Build();
 
