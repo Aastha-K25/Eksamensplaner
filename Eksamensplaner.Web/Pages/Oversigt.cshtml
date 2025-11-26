@@ -1,6 +1,8 @@
 @page
+@model OversigtModel
+
 @{
-    ViewData["Title"] = "Oversigt over semesterne";
+    ViewData["Title"] = "Oversigt over semestre";
 }
 <html>
 <head>
@@ -13,8 +15,50 @@
 </head>
 
 <body class="Om-Zealand-Page">
-<div>
+<div class="Eksamen-page">
     <h1 class="title">Oversigt over eksamerne for semesterne</h1>
+    <form method="get" class="Eksamen-filter">
+        <div class="Filter-gruppe">
+            <label for="SemesterFilter">Semester</label>
+            <select id="semesterFilter" name="SemesterFilter">
+                <option value="">Alle Semester</option>
+                <option value="1" selected="@(Model.SemesterFilter == 1)">1. semester</option>
+                <option value="2" selected="@(Model.SemesterFilter == 2)">2. semester</option>
+                <option value="3" selected="@(Model.SemesterFilter == 3)">3. semester</option>
+                <option value="4" selected="@(Model.SemesterFilter == 4)">4. semester</option>
+                <option value="5" selected="@(Model.SemesterFilter == 5)">5. semester</option>
+            </select>
+        </div>
+
+        <div class="Filter-gruppe">
+            <label for="typeFilter">Type</label>
+            <select id="typeFilter" name="TypeFilter">
+                <option value="">Alle typer</option>
+                <option value="Mundtlig" selected="@(Model.TypeFilter == "Mundtlig" ? "selected" : "")">Mundtlig</option>
+                <option value="Skriftlig" selected="@(Model.TypeFilter == "Skriftlig" ? "selected" : "")">Skriftlig</option>
+            </select>
+        </div>
+        <button type="submit" class="filter-button">Filtrer</button>
+    </form>
+    <div class="eksamen-liste">
+        @if (Model.Eksamener != null && Model.Eksamener.Count > 0)
+        {
+            foreach (var eksamen in Model.Eksamener)
+            {
+                <div class="Eksamen-kort">
+                    <div class="eksamen-uddannelse">@eksamen.Uddannelse</div>
+                    <div class="eksamen-aktivitet">@eksamen.Aktivitet</div>
+                    <div class="eksamen-semester">@eksamen.Semester). semester</div>
+                    <div class="eksamen-type">@eksamen.Type</div>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="no-resultat">Ingen eksamener matcher dit filter.</p>
+        }
+        
+    </div>
 </div>
 </body>
 </html>
