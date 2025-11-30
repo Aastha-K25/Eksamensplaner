@@ -17,9 +17,15 @@ html {
     min-height: 100%;
 }
 
+footer {
+    border-top: 1px solid #ffec80;
+    color: #ffec80;
+    padding: 10px;
+}
+
 body {
     background-color: #000;
-    color: #ffec80;
+    color: #ffffff;
     font-family: 'Zichtbaar', Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -57,13 +63,6 @@ body {
     color: #fff !important;
 }
 
-footer {
-    border-top: 1px solid #ffec80;
-    color: #ffec80;
-    padding: 10px;
-    font-size: 14px;
-
-}
 
 button, input, optgroup, select, textarea {
     background-color: black;
@@ -104,15 +103,15 @@ button, input, optgroup, select, textarea {
 
 .Filter-gruppe label {
     margin-bottom: 5px;
-    color: #ffec80;
+    color: #ffffff;
 }
 
 .Filter-gruppe select {
     padding: 6px 10px;
     border-radius: 4px;
-    border: 1px solid #ffec80;
+    border: 1px solid #ffffff;
     background-color: #000;
-    color: #ffec80;
+    color: #ffffff;
 }
 
 .filter-button {
@@ -130,10 +129,11 @@ button, input, optgroup, select, textarea {
     background-color: #fff;
 }
 
-.eksame-liste {
+.eksamen-liste {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 80px;
 }
 .Eksamen-kort {
     display: grid;
@@ -143,20 +143,6 @@ button, input, optgroup, select, textarea {
     border-radius: 4px;
     border: 1px solid #ffec80;
     background-color: #111;
-    color: #ffec80;
+    color: #ffffff;
     font-size: 15px;
 }
-
-/*.eksamen-uddannelse {
-    font-weight: bold;
-}
-.exam-semester,
-.exam-type {
-    text-align: right;
-}
-.no-results {
-    color: #ffec80;
-    margin-top: 20px;
-}
-.*/
-

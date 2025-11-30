@@ -2,18 +2,308 @@
 @model Eksamensplaner.Pages.SkemaStuderende
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Skema For Studerende";
 }
-
-<!DOCTYPE html>
-
 <html>
 <head>
-    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Skema/Kalender </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/skemaStuderende.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Eksamensplaner.styles.css" asp-append-version="true" />
 </head>
-<body>
-<div>
-    
-</div>
+<html>
+<body class="skema">
+<header class="skema-header">
+    <h1>2.semester - Kalender</h1>
+    <p>Hold Id: DAT-RO-F-V25B - Sem2</p>
+</header>
+<main class="kalender">
+    <section class="month">
+        <h2>August 2025</h2>
+        <div class="weekdays">
+            <div>Man</div><div>Tir</div><div>Ons</div><div>Tor</div><div>Fre</div><div>Lør</div><div>Søn</div>
+        </div>
+        <div class="days">
+            <div class="empty>"></div>
+            <div class="empty>"></div>
+            <div class="empty>"></div>
+            <div class="empty>"></div>
+            <div class="empty>"></div>
+            <div class="day"><span class="date">1</span></div>
+            <div class="day"><span class="date">2</span></div>
+            
+            <div class="day holiday"><span class="date">3</span><span class="label">sommerferie</span></div>
+            <div class="day holiday"><span class="date">4</span><span class="label">Sommerferie</span></div>
+            <div class="day holiday"><span class="date">5</span><span class="label">Sommerferie</span></div>
+            <div class="day holiday"><span class="date">6</span><span class="label">sommerferie</span></div>
+            <div class="day holiday"><span class="date">7</span><span class="label">sommerferie</span></div>
+            <div class="day"><span class="date">8</span></div>
+            <div class="day"><span class="date">9</span></div>
+            
+            <div class="day holiday"><span class="date">10</span><span class="label">sommerferie</span></div>
+            <div class="day holiday"><span class="date">11</span><span class="label">sommerferie</span></div>
+            <div class="day holiday"><span class="date">12</span><span class="label">sommerferie</span></div>
+            <div class="day holiday"><span class="date">13</span><span class="label">Sommerferie</span></div>
+            <div class="day holiday"><span class="date">14</span><span class="label">Sommerferie</span></div>
+            <div class="day"><span class="date">15</span></div>
+            <div class="day"><span class="date">16</span></div>
+            
+            <div class="day holiday"><span class="date">18</span><span class="label">sommerferie</span></div>
+            <div class="day holiday"><span class="date">19</span><span class="label">sommerferie</span></div>
+            <div class="day holiday"><span class="date">20</span><span class="label">sommerferie</span></div>
+            <div class="day holiday"><span class="date">21</span><span class="label">Sommerferie</span></div>
+            <div class="day holiday"><span class="date">22</span><span class="label">Sommerferie</span></div>
+            <div class="day"><span class="date">23</span></div>
+            <div class="day"><span class="date">24</span></div>
+            
+            <div class="day"><span class="date">25</span></div>
+            <div class="day Teknologi"><span class="date">26</span><span class="label">Teknologi</span></div>
+            <div class="day Systemudvikling"><span class="date">27</span><span class="label">Systemudvikling</span></div>
+            <div class="day ItogForretning"><span class="date">28</span><span class="label">It og forretningsforståelse</span></div>
+            <div class="day Programmering"><span class="date">29</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">30</span></div>
+            <div class="day"><span class="date">31</span></div>
+        </div>
+    </section>
+    <section class="month">
+        <h2>September 2025</h2>
+        <div class="weekdays">
+            <div>Man</div><div>Tir</div><div>Ons</div><div>Tor</div><div>Fre</div><div>Lør</div><div>Søn</div>
+        </div>
+        <div class="days">
+            <div class="day Programmering"><span class="date">1</span><span class="label">Programmering</span></div>
+            <div class="day Teknologi"><span class="date">2</span><span class="label">Teknologi</span></div>
+            <div class="day Systemudvikling"><span class="date">3</span><span class="label">Systemudvikling</span></div>
+            <div class="day ItogForretning"><span class="date">4</span><span class="label">It og forretningsforståelse</span></div>
+            <div class="day Programmering"><span class="date">5</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">6</span></div>
+            <div class="day"><span class="date">7</span></div>
+            
+            <div class="day"><span class="date">8</span></div>
+            <div class="day Teknologi"><span class="date">9</span><span class="label">Teknologi</span></div>
+            <div class="day Systemudvikling"><span class="date">10</span><span class="label">Systemudvikling</span></div>
+            <div class="day ItogForretning"><span class="date">11</span><span class="label">It og forretningsforståelse</span></div>
+            <div class="day Programmering"><span class="date">12</span></div>
+            <div class="day"><span class="date">13</span></div>
+            <div class="day"><span class="date">14</span></div>
+            
+            <div class="day Programmering"><span class="date">15</span><span class="label">Programmering</span></div>
+            <div class="day Teknologi"><span class="date">16</span><span class="label">Teknologi</span></div>
+            <div class="day Systemudvikling"><span class="date">17</span><span class="label">Systemudvikling</span></div>
+            <div class="day ItogForretning"><span class="date">18</span><span class="label">It og forretningsforståelse</span></div>
+            <div class="day Programmering"><span class="date">19</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">20</span></div>
+            <div class="day"><span class="date">21</span></div>
+            
+            <div class="day Programmering"><span class="date">22</span><span class="label">Programmering</span></div>
+            <div class="day Teknologi"><span class="date">23</span><span class="label">Teknologi</span></div>
+            <div class="day Systemudvikling"><span class="date">24</span><span class="label">Systemudvikling</span></div>
+            <div class="day"><span class="date">25</span></div>
+            <div class="day Programmering"><span class="date">26</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">27</span></div>
+            <div class="day"><span class="date">28</span></div>
+            
+            <div class="day Programmering"><span class="date">29</span><span class="label">Programmering</span></div>
+            <div class="day Teknologi"><span class="date">30</span><span class="label">Teknologi</span></div>
+        </div>
+    </section>
+    <section class="month">
+        <h2>Oktober 2025</h2>
+        <div class="weekdays">
+            <div>Man</div><div>Tir</div><div>Ons</div><div>Tor</div><div>Fre</div><div>Lør</div><div>Søn</div>
+        </div>
+        <div class="days">
+            <div class="day empty"></div>
+            <div class="day empty"></div>
+            <div class="day Systemudvikling"><span class="date">1</span><span class="label">Systemudvikling</span></div>
+            <div class="day ItogForretning"><span class="date">2</span><span class="label">It og forretningsforståelse</span></div>
+            <div class="day Programmering"><span class="date">3</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">4</span></div>
+            <div class="day"><span class="date">5</span></div>
+            
+            <div class="day"><span class="date">6</span></div>
+            <div class="day Teknologi"><span class="date">7</span><span class="label">Teknologi</span></div>
+            <div class="day Systemudvikling"><span class="date">8</span><span class="label">Systemudvikling</span></div>
+            <div class="day ItogForretning"><span class="date">9</span><span class="label">It og forretningsforståelse</span></div>
+            <div class="day Programmering"><span class="date">10</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">11</span></div>
+            <div class="day"><span class="date">12</span></div>
+            
+            <div class="day Programmering"><span class="date">13</span><span class="label">Programmering</span></div>
+            <div class="day Teknologi"><span class="date">14</span><span class="label">Teknologi</span></div>
+            <div class="day Systemudvikling"><span class="date">15</span><span class="label">Systemudvikling</span></div>
+            <div class="day ItogForretning"><span class="date">16</span><span class="label">It og forretningsforståelse</span></div>
+            <div class="day Programmering"><span class="date">17</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">18</span></div>
+            <div class="day"><span class="date">19</span></div>
+            
+            <div class="day Programmering"><span class="date">20</span><span class="label">Programmering</span></div>
+            <div class="day Teknologi"><span class="date">21</span><span class="label">Teknologi</span></div>
+            <div class="day Systemudvikling"><span class="date">22</span><span class="label">Systemudvikling</span></div>
+            <div class="day"><span class="date">23</span></div>
+            <div class="day Programmering"><span class="date">24</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">25</span></div>
+            <div class="day"><span class="date">26</span></div>
+            
+            <div class="day Programmering"><span class="date">27</span><span class="label">Programmering</span></div>
+            <div class="day Teknologi"><span class="date">28</span><span class="label">Teknologi</span></div>
+            <div class="day Systemudvikling"><span class="date">29</span><span class="label">Systemudvikling</span></div>
+            <div class="day"><span class="date">30</span></div>
+            <div class="day Programmering"><span class="date">31</span><span class="label">Programmering</span></div>
+            <div class="empty>"></div>
+            <div class="empty>"></div>
+        </div>
+    </section>
+    <section class="month">
+        <h2>November 2025</h2>
+        <div class="weekdays">
+            <div>Man</div><div>Tir</div><div>Ons</div><div>Tor</div><div>Fre</div><div>Lør</div><div>Søn</div>
+        </div>
+        <div class="days">
+            <div class="empty>"></div>
+            <div class="empty>"></div>
+            <div class="empty>"></div>
+            <div class="empty>"></div>
+            <div class="empty>"></div>
+            <div class="day"><span class="date">1</span></div>
+            <div class="day"><span class="date">2</span></div>
+
+            <div class="day Programmering"><span class="date">3</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">4</span></div>
+            <div class="day Systemudvikling"><span class="date">5</span><span class="label">Systemudvikling</span></div>
+            <div class="day ItogForretning"><span class="date">6</span><span class="label">It og forretningsforståelse</span></div>
+            <div class="day Programmering"><span class="date">7</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">8</span></div>
+            <div class="day"><span class="date">9</span></div>
+
+            <div class="day Programmering"><span class="date">10</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">11</span></div>
+            <div class="day Systemudvikling"><span class="date">12</span><span class="label">Systemudvikling</span></div>
+            <div class="day ItogForretning"><span class="date">13</span><span class="label">It og forretningsforståelse</span></div>
+            <div class="day Programmering"><span class="date">14</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">15</span></div>
+            <div class="day"><span class="date">16</span></div>
+
+            <div class="day"><span class="date">17</span></div>
+            <div class="day"><span class="date">18</span></div>
+            <div class="day Systemudvikling"><span class="date">19</span><span class="label">Systemudvikling</span></div>
+            <div class="day ItogForretning"><span class="date">20</span><span class="label">It og forretningsforståelse</span></div>
+            <div class="day Programmering"><span class="date">21</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">22</span></div>
+            <div class="day"><span class="date">23</span></div>
+
+            <div class="day Programmering"><span class="date">24</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">25</span></div>
+            <div class="day"><span class="date">26</span></div>
+            <div class="day"><span class="date">27</span></div>
+            <div class="day Programmering"><span class="date">28</span></div>
+            <div class="day"><span class="date">29</span></div>
+            <div class="day"><span class="date">30</span></div>
+        </div>
+    </section>
+    <section class="month">
+        <h2>December 2025</h2>
+        <div class="weekdays">
+            <div>Man</div><div>Tir</div><div>Ons</div><div>Tor</div><div>Fre</div><div>Lør</div><div>Søn</div>
+        </div>
+        <div class="days">
+            <div class="day Programmering"><span class="date">1</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">2</span></div>
+            <div class="day Systemudvikling"><span class="date">3</span><span class="label">Systemudvikling</span></div>
+            <div class="day "><span class="date">4</span></div>
+            <div class="day Programmering"><span class="date">5</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">6</span></div>
+            <div class="day"><span class="date">7</span></div>
+        
+            <div class="day Programmering"><span class="date">8</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">9</span></div>
+            <div class="day Systemudvikling"><span class="date">10</span><span class="label">Systemudvikling</span></div>
+            <div class="day"><span class="date">11</span></div>
+            <div class="day Programmering"><span class="date">12</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">13</span></div>
+            <div class="day"><span class="date">14</span></div>
+        
+            <div class="day Programmering"><span class="date">15</span><span class="label">Programmering</span></div>
+            <div class="day"><span class="date">16</span></div>
+            <div class="day"><span class="date">17</span></div>
+            <div class="day"><span class="date">18</span></div>
+            <div class="day assigmnet">
+                <span class="date">19</span>
+                <div class="note">Aflevering af Eksamenprojektet kl 12.</div>
+            </div>
+            <div class="day"><span class="date">20</span></div>
+            <div class="day"><span class="date">21</span></div>
+
+            <div class="day holiday"><span class="date">22</span><span class="label">Juleferie</span></div>
+            <div class="day holiday"><span class="date">23</span><span class="label">Juleferie</span></div>
+            <div class="day holiday"><span class="date">24</span><span class="label">Juleferie</span></div>
+            <div class="day holiday"><span class="date">25</span><span class="label">Juleferie</span></div>
+            <div class="day holiday"><span class="date">26</span><span class="label">Juleferie</span></div>
+            <div class="day "><span class="date">27</span></div>
+            <div class="day "><span class="date">28</span></div>    
+        
+            <div class="day holiday"><span class="date">29</span><span class="label">Juleferie</span></div>
+            <div class="day holiday"><span class="date">30</span><span class="label">Juleferie</span></div>
+            <div class="day holiday"><span class="date">31</span><span class="label">Juleferie</span></div>
+        </div> 
+    </section>
+    <section class="month">
+        <h2>Januar 2026</h2>
+        <div class="weekdays">
+            <div>Man</div><div>Tir</div><div>Ons</div><div>Tor</div><div>Fre</div><div>Lør</div><div>Søn</div>
+        </div>
+        <div class="days">
+            <div class="day empty"></div>
+            <div class="day empty"></div>
+            <div class="day empty"></div>
+            <div class="day holiday"><span class="date">1</span><span class="label">Læseferie</span></div>
+            <div class="day holiday"><span class="date">2</span><span class="label">Læsferie</span></div>
+            <div class="day "><span class="date">3</span></div>
+            <div class="day "><span class="date">4</span></div>
+            
+            <div class="day holiday"><span class="date">5</span><span class="label">Læseferie</span></div>
+            <div class="day holiday"><span class="date">6</span><span class="label">Læseferie</span></div>
+            <div class="day eksamen">
+                <span class="date">7</span>
+                <span class="note">Mundtlig 2.Semester eksamen</span>
+            </div>
+            <div class="day eksamen">
+                <span class="date">8</span>
+                <span class="note">Mundtlig 2.Semester eksamen</span>
+            </div>
+            <div class="day eksamen">
+                <span class="date">9</span>
+                <span class="note">Mundtlig 2.Semester eksamen</span>
+            </div>
+            <div class="day "><span class="date">10</span></div>
+            <div class="day "><span class="date">11</span></div>
+            
+            <div class="day holiday"><span class="date">12</span><span class="label">Ferie</span></div>
+            <div class="day holiday"><span class="date">13</span><span class="label">Ferie</span></div>
+            <div class="day holiday"><span class="date">14</span><span class="label">Ferie</span></div>
+            <div class="day holiday"><span class="date">15</span><span class="label">Ferie</span></div>
+            <div class="day holiday"><span class="date">16</span><span class="label">Ferie</span></div>
+            <div class="day "><span class="date">17</span></div>
+            <div class="day "><span class="date">18</span></div>
+            
+            <div class="day holiday"><span class="date">19</span><span class="label">Ferie</span></div>
+            <div class="day holiday"><span class="date">20</span><span class="label">Ferie</span></div>
+            <div class="day holiday"><span class="date">21</span><span class="label">Ferie</span></div>
+            <div class="day holiday"><span class="date">22</span><span class="label">Ferie</span></div>
+            <div class="day holiday"><span class="date">23</span><span class="label">Ferie</span></div>
+            <div class="day "><span class="date">24</span></div>
+            <div class="day "><span class="date">25</span></div>
+            
+            <div class="day holiday"><span class="date">26</span><span class="label">Ferie</span></div>
+            <div class="day holiday"><span class="date">27</span><span class="label">Ferie</span></div>
+            <div class="day holiday"><span class="date">28</span><span class="label">Ferie</span></div>
+            <div class="day holiday"><span class="date">29</span><span class="label">Ferie</span></div>
+            <div class="day holiday"><span class="date">30</span><span class="label">Ferie</span></div>
+            <div class="empty>"></div>
+        </div>
+    </section>
+</main>
 </body>
 </html>

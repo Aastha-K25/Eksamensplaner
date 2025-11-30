@@ -21,14 +21,15 @@
     <div class="login-box">
         <h2>Studerende</h2>
 
-        <form method="post" asp-page="/Student/Skema">
+        <form method="post" asp-page="/Student/SkemaStuderende">
             <label for="student-username">Brugernavn</label>
             <input type="text" id="student-username" name="StudentUserName" placeholder="Skriv brugernavn" required>
 
             <label for="student-password">Adgangskode</label>
             <input type="password" id="student-password" name="StudentPassword" placeholder="Skriv adgangskode" required>
-
-            <button type="submit">Log ind</button>
+            
+            <button onclick="window.location.href='/SkemaStuderende'">Log ind</button>
+           
         </form>
     </div>
 
@@ -42,7 +43,7 @@
             <label for="teacher-password">Adgangskode</label>
             <input type="password" id="teacher-password" name="TeacherPassword" placeholder="Skriv adgangskode" required>
 
-            <button type="submit">Log ind</button>
+            <button onclick="window.location.href='/SkemaLaerer'">Log ind</button>
         </form>
     </div>
 
