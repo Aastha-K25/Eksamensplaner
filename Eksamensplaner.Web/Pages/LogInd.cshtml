@@ -1,5 +1,5 @@
 @page
-@model PrivacyModel
+@model LogInd
 @{
     ViewData["Title"] = "AdminLogInd";
 }
@@ -21,7 +21,11 @@
     <div class="login-box">
         <h2>Studerende</h2>
 
+<<<<<<< HEAD
         <form method="post" asp-page="/Student/SkemaStuderende">
+=======
+        <form method="post" asp-page-handler="StudentLogIn">
+>>>>>>> origin/main
             <label for="student-username">Brugernavn</label>
             <input type="text" id="student-username" name="StudentUserName" placeholder="Skriv brugernavn" required>
 
@@ -36,7 +40,7 @@
     <div class="login-box">
         <h2>Underviser</h2>
 
-        <form method="post" asp-page="/Teacher/Skema">
+        <form method="post" asp-page-handler="TeacherLogIn">
             <label for="teacher-username">Brugernavn</label>
             <input type="text" id="teacher-username" name="TeacherUserName" placeholder="Skriv brugernavn" required>
 
@@ -50,7 +54,7 @@
     <div class="login-box">
         <h2>Administration</h2>
 
-        <form method="post" asp-page="/Admin/Exams">
+        <form method="post" asp-page-handler="AdminLogIn">
             <label for="admin-username">Brugernavn</label>
             <input type="text" id="admin-username" name="AdminUserName" placeholder="Skriv brugernavn" required>
 
