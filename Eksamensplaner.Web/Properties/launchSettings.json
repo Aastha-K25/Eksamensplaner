@@ -8,7 +8,7 @@
       "applicationUrl": "http://localhost:5077",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "EKSAMEN_DB_CONNECTION": "Server=localhost,1433;Database=EksamensPlannerDB;User Id=sa;Password=Aasthapasta1!;TrustServerCertificate=True;"
+        "EKSAMEN_DB_CONNECTION": "Server=localhost,1433;Database=EksamensPlannerDB;User Id=sa;Password=Aasthapasta1!;TrustServerCertificate=True;",
       },
 
 
