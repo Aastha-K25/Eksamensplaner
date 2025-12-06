@@ -1,0 +1,138 @@
+body {
+    background-color: #000000 !important;
+    color: #ffffff;
+}
+
+header, 
+nav.navbar {
+    background-color: #000000 !important;
+}
+
+.admin-section {
+    padding: 4rem 2rem;
+}
+
+.admin-title {
+    color: #ffec80;
+    font-size: 2.3rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.admin-subtitle {
+    color: #e5e7eb;
+    margin-left: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.admin-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 3rem;
+}
+
+.admin-box {
+    background-color: #000000;
+    border: 1px solid #ffec80;
+    border-radius: 10px;
+    padding: 1.8rem 2rem;
+    width: 460px;
+    min-height: 520px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.admin-box h2 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.admin-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex: 1;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.field-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.field-row .half {
+    flex: 1;
+}
+
+.admin-box label {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.admin-box input,
+.admin-box select {
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #333333;
+    background-color: #111111;
+    color: #ffffff;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.admin-box input::placeholder {
+    color: #9ca3af;
+}
+
+.admin-box input:focus,
+.admin-box select:focus {
+    border-color: #ffec80;
+    box-shadow: 0 0 0 2px rgba(255, 236, 128, 0.35);
+}
+
+.tilsyn-group {
+    margin-top: 0.4rem;
+}
+
+.tilsyn-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tilsyn-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+.admin-button {
+    margin-top: 1.3rem;
+    padding: 0.7rem 0.8rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background-color: #ffec80;
+    color: #000000;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+}
+
+.admin-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    background-color: #ffe68f;
+}
+
