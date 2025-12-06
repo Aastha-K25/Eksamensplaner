@@ -8,6 +8,7 @@ builder.Services.AddRazorPages();
 string connectionString = Environment.GetEnvironmentVariable("EKSAMEN_DB_CONNECTION");
 
 builder.Services.AddScoped<ExamRepository>(_ => new ExamRepository(connectionString));
+builder.Services.AddScoped<EksamenDetaljerRepository>(_ => new EksamenDetaljerRepository(connectionString));
 
 var app = builder.Build();
 

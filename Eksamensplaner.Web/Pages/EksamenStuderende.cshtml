@@ -1,5 +1,5 @@
 @page
-@model Eksamensplaner.Pages.EksamenDetaljer
+@model Eksamensplaner.Pages.EksamenStuderende
 @{
     ViewData["Title"] = "Detaljer";
 }
@@ -13,14 +13,29 @@
     <link rel="stylesheet" href="~/Eksamensplaner.styles.css" asp-append-version="true" />
 </head>
 <body>
-<section class="section">
-    <h1 class="eksamen-title">
-        @(Model.ViewType == "eksamen" ? "Eksamensplan" : "Afleveringsstatus")
-    </h1>
-    <div class = "table @">
-        
-    </div>
+<section class="eksamen-section">
+    <h1>Eksamen - Studerende </h1>
     
-
+    <div class="eksamen-header">
+        <div>Elev</div>
+        <div>Skolemail</div>
+        <div>Eksamenstid</div>
+        <div>Afleveret?</div>
+        <div>Afleveringsdato</div>
+    </div>  
+    @foreach (var elev in Model.Elever)
+    {
+        <div class="eksamen-row">
+            <div>@elev.Navn</div>
+            <div>@elev.SkoleMail</div>
+            <div>@elev.EksamenTidspunkt.Value.ToString("yyyy-MM-dd HH:mm")</div>
+            <div>@(elev.HarAfleveret? "Ja" : "Nej")</div>
+            <div>
+                @(elev.AfleveretDato.HasValue
+                    ? elev.AfleveretDato.Value.ToString("yyyy-MM-dd HH:mm")
+                : "-")
+            </div>
+        </div>
+    }
 </section>
 </body>

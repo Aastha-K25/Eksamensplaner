@@ -1,6 +1,6 @@
 namespace Eksamensplaner.Core.Models;
 
-public class EksamenStruderende
+public class EksamenStuderende
 {
     public int EksamenStuderendeId { get; set; }
     public int EksamenId { get; set; }
