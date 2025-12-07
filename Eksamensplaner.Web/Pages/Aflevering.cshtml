@@ -1,7 +1,7 @@
 @page
-@model Eksamensplaner.Pages.EksamenStuderende
+@model Eksamensplaner.Pages.AfleveringModel
 @{
-    ViewData["Title"] = "Detaljer";
+    ViewData["Title"] = "Aflevering";
 }
 <html>
 <head>
@@ -9,29 +9,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] Skema/Kalender </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/EksamenStuderende.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Aflevering.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Eksamensplaner.styles.css" asp-append-version="true" />
 </head>
 <body>
-<section class="eksamen-section">
-    <h1>Eksamen - Studerende </h1>
-    <div class="eksamen-list">
-        <div class="eksamen-header">
+<section class="aflevering-section">
+    <h1>Aflevering – Studerende</h1>
+
+    <div class="aflevering-list">
+
+        <div class="aflevering-header">
             <div>Elev</div>
             <div>Skolemail</div>
-            <div>Eksamenstid</div>
-            <div>Afleveret?</div>
+            <div>Har afleveret?</div>
             <div>Afleveringsdato</div>
-        </div>  
+        </div>
+
         @foreach (var elev in Model.Elever)
         {
-            <div class="eksamen-row">
+            <div class="aflevering-row">
                 <div>@elev.Navn</div>
-                <div>@elev.SkoleMail</div>
-                <div>@elev.EksamenTidspunkt.Value.ToString("yyyy-MM-dd HH:mm")</div>
-                <div>@(elev.HarAfleveret? "Ja" : "Nej")</div>
+                <div>@elev.SkoleEmail</div>
+                <div>@(elev.HarAfleveret ? "Ja" : "Nej")</div>
                 <div>
-                    @(elev.AfleveretDato.HasValue
+                    @(elev.AfleveretDato.HasValue 
                         ? elev.AfleveretDato.Value.ToString("yyyy-MM-dd HH:mm")
                         : "-")
                 </div>

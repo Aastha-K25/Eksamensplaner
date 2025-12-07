@@ -18,7 +18,7 @@ public class EksamenDetaljerRepository
     public List<EksamenElevViewModel> GetEksamenData(int eksamenId)
     {
         List<EksamenElevViewModel> result = new List<EksamenElevViewModel>();
-        
+
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             connection.Open();
@@ -50,7 +50,7 @@ public class EksamenDetaljerRepository
                             SkoleMail = (string)reader["SkoleEmail"],
                             EksamenTidspunkt = (DateTime)reader["EksamenTidspunkt"],
                             HarAfleveret = (bool)reader["HarAfleveret"],
-                            AfleveretDato = reader ["AfleveretDato"] ==DBNull.Value
+                            AfleveretDato = reader["AfleveretDato"] == DBNull.Value
                                 ? (DateTime?)null
                                 : (DateTime)reader["AfleveretDato"],
                         };
@@ -59,6 +59,49 @@ public class EksamenDetaljerRepository
                 }
             }
         }
+
+        return result;
+    }
+    public List<AfleveringElevViewModel> GetAfleveringForHold(int eksamenId)
+    {
+        List<AfleveringElevViewModel> result = new List<AfleveringElevViewModel>();
+
+        using (SqlConnection conn = new SqlConnection(_connectionString))
+        using (SqlCommand cmd = conn.CreateCommand())
+        {
+            cmd.CommandText = @"
+            SELECT s.Navn,
+                   s.SkoleEmail,
+                   es.HarAfleveret,
+                   es.AfleveretDato
+            FROM EksamensStuderende es
+            INNER JOIN Studerende s ON s.StuderendeId = es.StuderendeId
+            WHERE es.EksamenId = @EksamenId
+            ORDER BY s.Navn;
+        ";
+
+            cmd.Parameters.AddWithValue("@EksamenId", eksamenId);
+
+            conn.Open();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    AfleveringElevViewModel elev = new AfleveringElevViewModel()
+                    {
+                        Navn          = (string)reader["Navn"],
+                        SkoleEmail    = (string)reader["SkoleEmail"],
+                        HarAfleveret  =  (bool)reader["HarAfleveret"],
+                        AfleveretDato =  reader["AfleveretDato"] == DBNull.Value
+                            ? (DateTime?)null
+                            : (DateTime)reader["AfleveretDato"],
+                    };
+
+                    result.Add(elev);
+                }
+            }
+        }
+
         return result;
     }
 }
