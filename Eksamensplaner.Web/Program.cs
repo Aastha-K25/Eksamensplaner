@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Razor Pages
 builder.Services.AddRazorPages();
 
-string connectionString = Environment.GetEnvironmentVariable("EKSAMEN_DB_CONNECTION");
+string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddScoped<ExamRepository>(_ => new ExamRepository(connectionString));
 builder.Services.AddScoped<EksamenDetaljerRepository>(_ => new EksamenDetaljerRepository(connectionString));

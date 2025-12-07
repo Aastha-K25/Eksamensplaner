@@ -3,3 +3,24 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+.fake
+.idea/
+.vscode/
+
+# User Secrets (indeholder sensitive database credentials)
+**/appsettings.Development.json
+**/appsettings.Production.json
+**/appsettings.*.json
+
+# Launch settings (kan indeholde lokale konfigurationer)
+**/Properties/launchSettings.json
+
+# Deployment files
+publish/
+deploy.zip
+*.zip
+*.PublishSettings
+
+# OS files
+.DS_Store
+Thumbs.db

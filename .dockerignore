@@ -1,0 +1,26 @@
+# .dockerignore - Exclude unnecessary files from Docker build
+bin/
+obj/
+.git/
+.gitignore
+.dockerignore
+.vs/
+.vscode/
+*.md
+*.log
+.idea/
+_ReSharper.Caches/
+
+# User secrets and sensitive files
+**/appsettings.Development.json
+**/appsettings.*.json
+**/Properties/launchSettings.json
+
+# Build output
+publish/
+deploy.zip
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
