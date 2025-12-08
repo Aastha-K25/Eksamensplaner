@@ -11,6 +11,9 @@ obj/
 .idea/
 _ReSharper.Caches/
 
+# Ignore global.json to avoid SDK version conflicts in Docker
+global.json
+
 # User secrets and sensitive files
 **/appsettings.Development.json
 **/Properties/launchSettings.json

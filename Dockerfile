@@ -9,17 +9,16 @@ COPY ["Eksamensplaner.sln", "./"]
 COPY ["Eksamensplaner.Web/Eksamensplaner.Web.csproj", "Eksamensplaner.Web/"]
 COPY ["Eksamensplaner.Core/Eksamensplaner.Core.csproj", "Eksamensplaner.Core/"]
 COPY ["Eksamensplaner.Infrastructure/Eksamensplaner.Infrastructure.csproj", "Eksamensplaner.Infrastructure/"]
-COPY ["global.json", "./"]
 
-# Restore
+# Restore all projects
 RUN dotnet restore "Eksamensplaner.Web/Eksamensplaner.Web.csproj"
 
 # Copy everything else
 COPY . .
 
-# Build and publish in one step (saves memory)
+# Build and publish (removed --no-restore to ensure all packages are available)
 WORKDIR "/src/Eksamensplaner.Web"
-RUN dotnet publish "Eksamensplaner.Web.csproj" -c Release -o /app/publish /p:UseAppHost=false --no-restore
+RUN dotnet publish "Eksamensplaner.Web.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
