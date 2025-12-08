@@ -27,7 +27,7 @@
     <div class="admin-box">
         <h2>Registrer eksamen for underviser</h2>
         
-        <form>
+        <form method="post" asp-page-handler="Teacher">
             
             <div class="field-group">
                 <label for="teacher-holdid">Hold ID</label>
@@ -103,7 +103,7 @@
                 </div>
             </div>
             
-            <button type="button" class="admin-button">
+            <button type="submit" class="admin-button">
                 Gem eksamen for underviser
             </button>
         </form>
@@ -115,7 +115,7 @@
 <div class="admin-box">
     <h2>Registrer eksamen for studerende</h2>
     
-    <form>
+    <form method="post" asp-page-handler="Student">
         
         <div class="field-group">
             <label for="student-holdid">Hold ID</label>
@@ -173,7 +173,7 @@
             </div>
         </div>
         
-        <button type="button" class="admin-button">
+        <button type="submit" class="admin-button">
             Gem eksamen for studerende
         </button>
     </form>
