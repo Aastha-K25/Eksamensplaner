@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Microsoft SQL Server (JetBrains) " uuid="a9bf94cb-0447-4f89-a4d1-26a6ec9db58e">
+    <data-source source="LOCAL" name="EksamensplannerDB" uuid="78914ca1-08aa-43a7-924a-db67a97119de">
       <driver-ref>sqlserver.jb</driver-ref>
       <synchronize>true</synchronize>
-      <configured-by-url>true</configured-by-url>
       <jdbc-driver>com.jetbrains.jdbc.sqlserver.SqlServerDriver</jdbc-driver>
-      <jdbc-url>Server=localhost, 1433</jdbc-url>
+      <jdbc-url>Server=mssql9.unoeuro.com,1433;Database=aastha_dk_db_planner</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
