@@ -29,7 +29,7 @@ WORKDIR /app
 EXPOSE 8080
 
 # Copy published app
-COPY --from=publish /app/publish .
+COPY --from=build /app/publish .
 
 # Set environment variable for ASP.NET to listen on the port Render provides
 ENV ASPNETCORE_URLS=http://+:8080
