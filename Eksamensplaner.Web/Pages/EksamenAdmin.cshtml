@@ -31,18 +31,18 @@
             
             <div class="field-group">
                 <label for="teacher-holdid">Hold ID</label>
-                <input type="text" id="teacher-holdid" placeholder="Hold ID" />
+                <input type="text" id="teacher-holdid" name="teacher-holdid" placeholder="Hold ID" />
             </div>
             
             <div class="field-group">
                 <label for="teacher-proevenavn">Prøvenavn</label>
-                <input type="text" id="teacher-proevenavn" placeholder="Prøvenavn" />
+                <input type="text" id="teacher-proevenavn" name="teacher-proevenavn" placeholder="Prøvenavn" />
             </div>
             
             <div class="field-row">
                 <div class="field-group half">
                     <label for="teacher-form">Form</label>
-                    <select id="teacher-form">
+                    <select id="teacher-form" name="teacher-form">
                         <option value="">Vælg form</option>
                         <option>Mundtlig</option>
                         <option>Skriftlig</option>
@@ -52,7 +52,7 @@
                 
                 <div class="field-group half">
                     <label for="teacher-type">Eksamens-type</label>
-                    <select id="teacher-type">
+                    <select id="teacher-type" name="teacher-type">
                         <option value="">Vælg type</option>
                         <option>Eksamen</option>
                         <option>Re-Eksamen</option>
@@ -63,12 +63,12 @@
             <div class="field-row">
                 <div class="field-group half">
                     <label for="teacher-date">Dato</label>
-                    <input type="date" id="teacher-date" />
+                    <input type="date" id="teacher-date" name="teacher-date" />
                 </div>
                 
                 <div class="field-group half">
                     <label for="teacher-role">Rolle</label>
-                    <select id="teacher-role">
+                    <select id="teacher-role" name="teacher-role">
                         <option value="">Vælg rolle</option>
                         <option>Eksaminator</option>
                         <option>Censor</option>
@@ -79,25 +79,25 @@
             <div class="field-row">
                 <div class="field-group half">
                     <label for="teacher-starttime">Starttid</label>
-                    <input type="time" id="teacher-starttime" />
+                    <input type="time" id="teacher-starttime" name="teacher-starttime" />
                 </div>
                 
                 <div class="field-group half">
                     <label for="teacher-endtime">Sluttid</label>
-                    <input type="time" id="teacher-endtime" />
+                    <input type="time" id="teacher-endtime" name="teacher-endtime" />
                 </div>
             </div>
             
             <div class="field-row">
                 <div class="field-group half">
                     <label for="teacher-antal">Antal studerende</label>
-                    <input type="number" id="teacher-antal" min="1" placeholder="Antal studerende" />
+                    <input type="number" id="teacher-antal" name="teacher-antal" min="1" placeholder="Antal studerende" />
                 </div>
                 
                 <div class="field-group half tilsyn-group">
                     <label for="teacher-tilsyn">Tilsyn (Vagt)</label>
                     <div class="tilsyn-checkbox">
-                        <input type="checkbox" id="teacher-tilsyn" />
+                        <input type="checkbox" id="teacher-tilsyn" name="teacher-tilsyn" />
                         <span>Der er tilsyn til prøven</span>
                     </div>
                 </div>
@@ -119,18 +119,18 @@
         
         <div class="field-group">
             <label for="student-holdid">Hold ID</label>
-            <input type="text" id="student-holdid" placeholder="Hold ID" />
+            <input type="text" id="student-holdid" name="student-holid"placeholder="Hold ID" />
         </div>
         
         <div class="field-group">
             <label for="student-proevenavn">Prøvenavn</label>
-            <input type="text" id="student-proevenavn" placeholder="Prøvenavn" />
+            <input type="text" id="student-proevenavn" name="student-proevenavn" placeholder="Prøvenavn" />
         </div>
         
         <div class="field-row">
             <div class="field-group half">
                 <label for="student-form">Form</label>
-                <select id="student-form">
+                <select id="student-form" name="student-form">
                     <option value="">Vælg form</option>
                     <option>Mundtlig</option>
                     <option>Skriftlig</option>
@@ -140,7 +140,7 @@
             
             <div class="field-group half">
                 <label for="student-type">Eksamens-type</label>
-                <select id="student-type">
+                <select id="student-type" name="student-type">
                     <option value="">Vælg type</option>
                     <option>Eksamen</option>
                     <option>Re-Eksamen</option>
@@ -151,24 +151,24 @@
         <div class="field-row">
             <div class="field-group half">
                 <label for="student-date">Dato</label>
-                <input type="date" id="student-date" />
+                <input type="date" id="student-date" name="student-date" />
             </div>
             
             <div class="field-group half">
                 <label for="student-antal">Antal studerende</label>
-                <input type="number" id="student-antal" min="1" placeholder="Antal studerende" />
+                <input type="number" id="student-antal" name="tudent-antal" min="1" placeholder="Antal studerende" />
             </div>
         </div>
         
         <div class="field-group">
             <label for="student-time">Tidspunkt</label>
-            <input type="time" id="student-time" />
+            <input type="time" id="student-time" name="sstudent-time" />
         </div>
         
         <div class="field-group tilsyn-group">
             <label for="student-tilsyn">Tilsyn (Vagt)</label>
             <div class="tilsyn-checkbox">
-                <input type="checkbox" id="student-tilsyn" />
+                <input type="checkbox" id="student-tilsyn" name="student-tilsyn" />
                 <span>Der er tilsyn til prøven</span>
             </div>
         </div>
