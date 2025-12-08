@@ -13,7 +13,6 @@ _ReSharper.Caches/
 
 # User secrets and sensitive files
 **/appsettings.Development.json
-**/appsettings.*.json
 **/Properties/launchSettings.json
 
 # Build output
