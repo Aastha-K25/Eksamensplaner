@@ -2,21 +2,24 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
+# Copy solution file if exists
+COPY ["Eksamensplaner.sln", "./"]
+
 # Copy csproj files and restore dependencies
 COPY ["Eksamensplaner.Web/Eksamensplaner.Web.csproj", "Eksamensplaner.Web/"]
 COPY ["Eksamensplaner.Core/Eksamensplaner.Core.csproj", "Eksamensplaner.Core/"]
 COPY ["Eksamensplaner.Infrastructure/Eksamensplaner.Infrastructure.csproj", "Eksamensplaner.Infrastructure/"]
+COPY ["global.json", "./"]
 
+# Restore
 RUN dotnet restore "Eksamensplaner.Web/Eksamensplaner.Web.csproj"
 
-# Copy everything else and build
+# Copy everything else
 COPY . .
-WORKDIR "/src/Eksamensplaner.Web"
-RUN dotnet build "Eksamensplaner.Web.csproj" -c Release -o /app/build
 
-# Publish stage
-FROM build AS publish
-RUN dotnet publish "Eksamensplaner.Web.csproj" -c Release -o /app/publish /p:UseAppHost=false
+# Build and publish in one step (saves memory)
+WORKDIR "/src/Eksamensplaner.Web"
+RUN dotnet publish "Eksamensplaner.Web.csproj" -c Release -o /app/publish /p:UseAppHost=false --no-restore
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
