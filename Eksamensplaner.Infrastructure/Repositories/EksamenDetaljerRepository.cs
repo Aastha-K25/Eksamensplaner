@@ -74,7 +74,7 @@ public class EksamenDetaljerRepository
                    s.SkoleEmail,
                    es.HarAfleveret,
                    es.AfleveretDato
-            FROM EksamensStuderende es
+            FROM EksamenStuderende es
             INNER JOIN Studerende s ON s.StuderendeId = es.StuderendeId
             WHERE es.EksamenId = @EksamenId
             ORDER BY s.Navn;
