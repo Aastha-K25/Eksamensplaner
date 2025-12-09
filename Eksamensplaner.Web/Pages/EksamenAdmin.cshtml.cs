@@ -16,6 +16,7 @@ namespace Eksamensplaner.Pages
             Eksamen eksamen = new Eksamen();
 
             eksamen.HoldId = Request.Form["teacher-holdid"];
+            eksamen.Navn = Request.Form["teacher-name"];
             eksamen.ProeveNavn = Request.Form["teacher-proevenavn"];
             eksamen.Form = Request.Form["teacher-form"];
             eksamen.EksamensType = Request.Form["teacher-type"];
@@ -37,12 +38,12 @@ namespace Eksamensplaner.Pages
             Eksamen eksamen = new Eksamen();
 
             eksamen.HoldId = Request.Form["student-hold"];
+            eksamen.Navn = Request.Form["student-name"];
             eksamen.ProeveNavn = Request.Form["student-proevenavn"];
             eksamen.Form = Request.Form["student-form"];
             eksamen.EksamensType = Request.Form["student-type"];
             eksamen.Dato = Request.Form["student-date"];
             eksamen.Tidspunkt = Request.Form["student-time"];
-            eksamen.AntalStuderende = Request.Form["student-antal"];
             eksamen.HarTilsyn = Request.Form["student-tilsyn"] == "on";
             eksamen.MaalGruppe = "Studerende";
 

@@ -99,6 +99,9 @@ button, input, optgroup, select, textarea {
 .OmZealandKnap a:hover {
     background-color: #fff !important;
     color: #000 !important;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 0 18px rgba(255, 236, 128, 0.7);
+    border-color: #ffffff !important;
 }
 
 .landing {
@@ -142,7 +145,7 @@ footer {
 
 .home-section {
     width: 85%;
-    margin: 40px auto 80px auto;
+    margin: 10px auto 50px auto;
     text-align: center;
 }
 
@@ -171,18 +174,24 @@ footer {
     text-decoration: none;
     color: #ffec80;
     transition: transform 025s ease, box-shadow 025s ease;
-    display: block;
 }
 
 .home-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 20px rgba(255,236,128, 0.5);
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(255,236,128, 0.7);
+}
+.home-card:hover .home-card-image {
+    transform: scale(1.12);
+}
+.home-card:hover .home-card-content {
+    opacity: 1;
 }
 
 .home-card-image {
     height: 160px;
     background-size: cover;
     background-position: center;
+    transition: transsform 0.35s ease-in-out;
 }
 
 .home-card-image-1 {
@@ -196,8 +205,8 @@ footer {
 }
 
 .home-card-content {
-    font-size: 22px;
-    margin-bottom: 10px;
+    opacity: 0.9;
+    transition:opacity 025s ease;
 }
 
 .home-card-content h3 {
