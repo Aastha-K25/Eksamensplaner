@@ -186,13 +186,13 @@ footer {
 }
 
 .home-card-image-1 {
-    background-image: url('/images/Image1.jpg');
+    background-image: url('/Images/Image1.png');
 }
 .home-card-image-2 {
-    background-image: url('/images/Image2.jpg');
+    background-image: url('/Images/Image2.png');
 }
 .home-card-image-3 {
-    background-image: url('/images/Image3.jpg');
+    background-image: url('/Images/Image3.png');
 }
 
 .home-card-content {
