@@ -6,10 +6,50 @@
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-<div class="hero">
-    <h1>Er du klar til at teste studielivet?</h1>
-    <p>Læs om vores skole og oplev hverdagen som studerende for en dag</p>
-    <button class="OmZealandKnap">
-        <a class="nav-link text-dark" asp-area="" asp-page="/OmZealand">Læs om Zealand</a>
-    </button>
+<div class="landing">
+    
+    <section class="hero">
+        <h1>Er du klar til at teste studielivet?</h1>
+        <p>Læs om vores skole og oplev hverdagen som studerende for en dag</p>
+        <button class="OmZealandKnap">
+            <a class="nav-link text-dark" asp-area="" asp-page="/OmZealand">Læs om Zealand</a>
+        </button>
+    </section>
+    
+    <section class="home-section">
+        <h2>Oplev Zealand</h2>
+        <p classs="home-section-text">
+            Få et overblik over campus, studielivet og hvor i landet du kan finde os
+        </p>
+        
+        <div class="home-grid">   
+         
+            <!-- Kort1 -->
+            <a asp-page="/OmZealand" class="home-card">
+                <div class="home-card-image home-card-image-1"></div>
+                <div class="home-card-content">
+                    <h3>Vores Campus</h3>
+                    <p>Se hvordan studiemiljøet ser ud, og hvor undervisningen foregår</p>
+                </div>
+            </a>
+            
+            <!-- Kort2 -->
+            <a asp-page="/OmZealand" class="home-card">
+                <div class="home-card-image home-card-image-2"></div>
+                <div class="home-card-content">
+                    <h3>Studielivet</h3>
+                    <p>Læs om undervisning, fag og hverdagen som studerende på Zealand</p>
+                </div>
+            </a>
+            
+            <!-- Kort3 -->
+            <a asp-page="/OmZealand" class="home-card">
+                <div class="home-card-content">
+                    <h3>Her finder du os</h3>
+                    <p>Få et overblik over vores afdelinger og byer, hvor du kan studere</p>
+                </div>
+            </a>
+            
+        </div>
+    </section>
 </div>

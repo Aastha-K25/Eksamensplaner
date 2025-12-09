@@ -55,75 +55,6 @@ body {
 .navbar-nav .nav-link:hover {
     color: #ffffff !important;
 }
-.OmZealandKnap a {
-    background-color: #ffec80 !important;
-    color: #000 !important;
-    padding: 8px 22px;
-    border-radius: 4px;
-    font-weight: bold;
-    text-decoration: none;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;
-    font-size: 16px;
-}
-
-.OmZealandKnap a:hover {
-    background-color: #fff !important;
-    color: #000 !important;
-}
-.hero {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 80px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #ffec80;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 22px;
-    color: #ffec80;
-    opacity: 0.9;
-}
-
-footer {
-    border-top: 1px solid #ffec80;
-    color: #ffec80;
-    padding: 10px;
-    font-size: 14px;
-    
-}
-
-.hero-button {
-    background-color: #ffec80;
-    color: #000;
-    text-decoration: none;
-    padding: 12px 28px;
-    font-weight: bold;
-    font-size: 18px;
-    border-radius: 4px;
-    border: 2px solid #ffec80;
-    transition: all 0.3s ease;
-    margin-top: 25px;
-    display: inline-block;
-}
-
-.hero-button:hover {
-    background-color: #fff;
-    color: #000;
-    border-color: #fff;
-}
 
 button, input, optgroup, select, textarea {
     background-color: black;
@@ -149,3 +80,145 @@ button, input, optgroup, select, textarea {
     background-color: #fff !important;
     color: #000 !important;
 }
+
+.OmZealandKnap a {
+    background-color: #ffec80 !important;
+    color: #000 !important;
+    padding: 8px 22px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.OmZealandKnap a:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+.landing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 80px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ffec80;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 22px;
+    color: #ffec80;
+    opacity: 0.9;
+}
+
+footer {
+    border-top: 1px solid #ffec80;
+    color: #ffec80;
+    padding: 10px;
+    font-size: 14px;
+    
+}
+
+.home-section {
+    width: 85%;
+    margin: 40px auto 80px auto;
+    text-align: center;
+}
+
+.home-section h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: #ffec80;
+}
+
+.home-section-text {
+    font-size: 18px;
+    opacity: 0.85;
+    margin-bottom: 40px;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+.home-card {
+    background-color: #111;
+    border: 2px solid #ffec80;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #ffec80;
+    transition: transform 025s ease, box-shadow 025s ease;
+    display: block;
+}
+
+.home-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(255,236,128, 0.5);
+}
+
+.home-card-image {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+}
+
+.home-card-image-1 {
+    background-image: url('/images/Image1.jpg');
+}
+.home-card-image-2 {
+    background-image: url('/images/Image2.jpg');
+}
+.home-card-image-3 {
+    background-image: url('/images/Image3.jpg');
+}
+
+.home-card-content {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.home-card-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.home-card-content p {
+    font-size: 15px;
+    opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+    
+    .home-section {
+        width: 92%
+    }
+} 
