@@ -14,6 +14,7 @@ public class EksamenDetaljerRepository
     {
         _connectionString = connectionString;
     }
+    
 
     public List<EksamenElevViewModel> GetEksamenData(int eksamenId)
     {
@@ -33,7 +34,7 @@ public class EksamenDetaljerRepository
             FROM EksamenStuderende es
             JOIN Studerende s ON s.StuderendeId = es.StuderendeId
             WHERE es.EksamenId = @EksamenId
-            ORDER BY s.Navn";
+            ORDER BY es.EksamenTidspunkt, s.Navn";
 
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
@@ -64,6 +65,7 @@ public class EksamenDetaljerRepository
     }
     public List<AfleveringElevViewModel> GetAfleveringForHold(int eksamenId)
     {
+        
         List<AfleveringElevViewModel> result = new List<AfleveringElevViewModel>();
 
         using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -101,7 +103,6 @@ public class EksamenDetaljerRepository
                 }
             }
         }
-
         return result;
     }
 }
