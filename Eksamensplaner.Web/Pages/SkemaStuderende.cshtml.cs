@@ -11,13 +11,8 @@ namespace Eksamensplaner.Pages
     {
         public List<Eksamen> EksamenerForStuderende { get; set; }
 
-        public void OnGet(string holdId)
+        public void OnGet(string holdId = "DAT-RO-F-V25B")
         {
-            if (holdId == null)
-            {
-                holdId = "";
-            }
-
             EksamenerForStuderende = EksamenRepository.GetForStuderende(holdId);
         }
     }

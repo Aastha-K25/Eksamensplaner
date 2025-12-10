@@ -19,6 +19,49 @@
     <h1>2.semester - Kalender</h1>
     <p>Hold Id: DAT-RO-F-V25B - Sem2</p>
 </header>
+
+<section class="eksamen-liste">
+    <h2>Dine registrerede eksamener</h2>
+    
+    @if (Model.EksamenerForStuderende != null && Model.EksamenerForStuderende.Count > 0)
+    {
+        <table class="eksamen-tabel">
+            <thead>
+            <tr>
+                <th>Hold</th>
+                <th>Navn</th>
+                <th>Prøvenavn</th>
+                <th>Form</th>
+                <th>Type</th>
+                <th>Dato</th>
+                <th>Tidspunkt</th>
+                <th>Tilsyn</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var eksamen in Model.EksamenerForStuderende)
+            {
+                <tr>
+                    <td>@eksamen.HoldId</td>
+                    <td>@eksamen.Navn</td>
+                    <td>@eksamen.ProeveNavn</td>
+                    <td>@eksamen.Form</td>
+                    <td>@eksamen.EksamensType</td>
+                    <td>@eksamen.Dato</td>
+                    <td>@eksamen.Tidspunkt</td>
+                    <td>@(eksamen.HarTilsyn ? "Ja" : "Nej")</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Der er endnu ikke registreret nogen eksamener for studerende</p>
+    }
+</section>
+
+
 <main class="kalender">
     <section class="month">
         <h2>August 2025</h2>

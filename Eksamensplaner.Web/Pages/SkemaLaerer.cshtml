@@ -1,5 +1,5 @@
 @page
-@model Eksamensplaner.Web.Pages.SkemaLaerer
+@model Eksamensplaner.Pages.SkemaLaerer
 
 
 @{
@@ -21,6 +21,52 @@
     <h1>Underviser: Anders Torp (ATO)</h1>
     <p>Systemudvikling og IT & Virksomhed</p>
 </header>
+
+<section class="eksamen-liste">
+    <h2>Registrerede eksamener (lærer)</h2>
+    
+    @if (Model.EksamenerForLaerer != null && Model.EksamenerForLaerer.Count > 0)
+    {
+        <table class="eksamen-tabel">
+            <thead>
+            <tr>
+                <th>Hold</th>
+                <th>Navn</th>
+                <th>Prøvenavn</th>
+                <th>Form</th>
+                <th>Type</th>
+                <th>Rolle</th>
+                <th>Dato</th>
+                <th>Start</th>
+                <th>Slut</th>
+                <th>Tilsyn</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var eksamen in Model.EksamenerForLaerer)
+            {
+                <tr>
+                    <td>@eksamen.HoldId</td>
+                    <td>@eksamen.Navn</td>
+                    <td>@eksamen.ProeveNavn</td>
+                    <td>@eksamen.Form</td>
+                    <td>@eksamen.EksamensType</td>
+                    <td>@eksamen.Rolle</td>
+                    <td>@eksamen.Dato</td>
+                    <td>@eksamen.StartTid</td>
+                    <td>@eksamen.SlutTid</td>
+                    <td>@(eksamen.HarTilsyn ? "Ja" : "Nej")</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Der er endnu ikke registreret eksamener for læreren</p>
+    }
+        </section>
+
 <main class="kalender">
     <section class="month">
         <h2>August 2025</h2>

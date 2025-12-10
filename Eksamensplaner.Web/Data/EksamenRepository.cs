@@ -21,7 +21,8 @@ public static class EksamenRepository
         {
             Eksamen eksamen = _eksamener[i];
 
-            if (eksamen.MaalGruppe == "Underviser" && eksamen.HoldId == holdId)
+            if (eksamen.MaalGruppe == "Underviser" &&
+                (string.IsNullOrEmpty(holdId) || eksamen.HoldId == holdId))
             {
                 result.Add(eksamen);
             }
@@ -38,7 +39,8 @@ public static class EksamenRepository
         {
             Eksamen eksamen = _eksamener[i];
 
-            if (eksamen.MaalGruppe == "Studerende" && eksamen.HoldId == holdId)
+            if (eksamen.MaalGruppe == "Studerende" && 
+                (string.IsNullOrEmpty(holdId) || eksamen.HoldId == holdId))
             {
                 result.Add(eksamen);
             }

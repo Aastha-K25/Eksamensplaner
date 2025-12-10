@@ -1,23 +1,19 @@
 using System.Collections.Generic;
+using System.Security;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Eksamensplaner.Data;
 using Eksamensplaner.Models;
 
 
-namespace Eksamensplaner.Web.Pages
+namespace Eksamensplaner.Pages
 {
     public class SkemaLaerer : PageModel
     {
         public List<Eksamen> EksamenerForLaerer { get; set; }
 
-        public void OnGet(string holdId)
+        public void OnGet(string holdId = "DAT-RO-F-V25B")
         {
-            if (holdId == null)
-            {
-                holdId = "";
-            }
-
-            EksamenerForLaerer = EksamenRepository.GetForLaerer(holdId);
+            EksamenerForLaerer = EksamenRepository.GetForLaerer("holdId");
         }
     }
 }
