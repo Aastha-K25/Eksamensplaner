@@ -21,23 +21,12 @@
         <div class="Filter-gruppe">
             <label for="SemesterFilter">Semester</label>
             <select id="semesterFilter" name="SemesterFilter">
-                <option value="">Alle semestre</option>
-
-                <option value="1" selected="@(Model.SemesterFilter == 1 ? "selected" : "")">
-                    1. semester
-                </option>
-                <option value="2" selected="@(Model.SemesterFilter == 2 ? "selected" : "")">
-                    2. semester
-                </option>
-                <option value="3" selected="@(Model.SemesterFilter == 3 ? "selected" : "")">
-                    3. semester
-                </option>
-                <option value="4" selected="@(Model.SemesterFilter == 4 ? "selected" : "")">
-                    4. semester
-                </option>
-                <option value="5" selected="@(Model.SemesterFilter == 5 ? "selected" : "")">
-                    5. semester
-                </option>
+                    <option value="0">Alle semestre</option>
+                    <option value="1">1. semester</option>
+                    <option value="2">2. semester</option>
+                    <option value="3">3. semester</option>
+                    <option value="4">4. semester</option>
+                    <option value="5">5. semester</option>
             </select>
         </div>
 
@@ -45,31 +34,11 @@
             <label for="typeFilter">Type</label>
             <select id="typeFilter" name="TypeFilter">
                 <option value="">Alle typer</option>
-
-                <option value="Mundtlig"
-                        selected="@(Model.TypeFilter == "Mundtlig" ? "selected" : "")">
-                    Mundtlig
-                </option>
-
-                <option value="Mundtlig + Synopsis"
-                        selected="@(Model.TypeFilter == "Mundtlig + Synopsis" ? "selected" : "")">
-                    Mundtlig + Synopsis
-                </option>
-
-                <option value="Skriftlig"
-                        selected="@(Model.TypeFilter == "Skriftlig" ? "selected" : "")">
-                    Skriftlig
-                </option>
-
-                <option value="Mundtlig + Projekt"
-                        selected="@(Model.TypeFilter == "Mundtlig + Projekt" ? "selected" : "")">
-                    Mundtlig + Projekt
-                </option>
-
-                <option value="Stedprøve/Mundtlig"
-                        selected="@(Model.TypeFilter == "Stedprøve/Mundtlig" ? "selected" : "")">
-                    Stedprøve/Mundtlig
-                </option>
+                <option value="Mundtlig">Mundtlig</option>
+                <option value="Mundtlig + Synopsis">Mundtlig + Synopsis</option>
+                <option value="Skriftlig">Skriftlig</option>
+                <option value="Mundtlig + Projekt">Mundtlig + Projekt</option>
+                <option value="Stedprøve/Mundtlig">Stedprøve/Mundtlig</option>
             </select>
         </div>
         <button type="submit" class="filter-button">Filtrer</button>

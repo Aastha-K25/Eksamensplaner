@@ -10,6 +10,7 @@ body.skema {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    margin-bottom: 50px;
 }
 .skema-header {
     background-color: #ffeebb;
