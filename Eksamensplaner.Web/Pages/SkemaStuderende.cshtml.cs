@@ -9,11 +9,11 @@ namespace Eksamensplaner.Pages
 {
     public class SkemaStuderende : PageModel
     {
-        public List<Eksamen> EksamenerForStuderende { get; set; }
+        public List<Eksamen> EksamenForStuderende { get; set; }
 
-        public void OnGet(string holdId = "DAT-RO-F-V25B")
+        public void OnGet()
         {
-            EksamenerForStuderende = EksamenRepository.GetForStuderende(holdId);
+            EksamenForStuderende = EksamenRepository.GetForStuderende("DAT-RO-F-V25B");
         }
     }
 }

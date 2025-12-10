@@ -1,6 +1,7 @@
 @page
 @model Eksamensplaner.Pages.SkemaStuderende
 
+
 @{
     ViewData["Title"] = "Skema For Studerende";
 }
@@ -23,7 +24,7 @@
 <section class="eksamen-liste">
     <h2>Dine registrerede eksamener</h2>
     
-    @if (Model.EksamenerForStuderende != null && Model.EksamenerForStuderende.Count > 0)
+    @if (Model.EksamenForStuderende != null && Model.EksamenForStuderende.Count > 0)
     {
         <table class="eksamen-tabel">
             <thead>
@@ -39,7 +40,7 @@
             </tr>
             </thead>
             <tbody>
-            @foreach (var eksamen in Model.EksamenerForStuderende)
+            @foreach (var eksamen in Model.EksamenForStuderende)
             {
                 <tr>
                     <td>@eksamen.HoldId</td>
