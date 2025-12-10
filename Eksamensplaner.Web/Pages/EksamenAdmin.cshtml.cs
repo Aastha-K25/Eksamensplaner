@@ -26,7 +26,7 @@ namespace Eksamensplaner.Pages
             eksamen.SlutTid = Request.Form["teacher-endtime"];
             eksamen.AntalStuderende = Request.Form["teacher-antal"];
             eksamen.HarTilsyn = Request.Form["teacher-tilsyn"] == "on";
-            eksamen.MaalGruppe = Request.Form["Underviser"];
+            eksamen.MaalGruppe = "Underviser";
 
             EksamenRepository.Add(eksamen);
 
@@ -37,7 +37,7 @@ namespace Eksamensplaner.Pages
         {
             Eksamen eksamen = new Eksamen();
 
-            eksamen.HoldId = Request.Form["student-hold"];
+            eksamen.HoldId = Request.Form["student-holdid"];
             eksamen.Navn = Request.Form["student-name"];
             eksamen.ProeveNavn = Request.Form["student-proevenavn"];
             eksamen.Form = Request.Form["student-form"];
