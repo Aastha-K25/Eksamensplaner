@@ -1,55 +1,93 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Eksamensplaner.Data;
-using Eksamensplaner.Models;
+using Eksamensplaner.Core.Models;
+using Eksamensplaner.Infrastructure.Repositories;
 
 namespace Eksamensplaner.Pages
 {
     public class EksamenAdmin : PageModel
     {
+        private readonly RegistreretEksamenRepository _repository;
+
+        public EksamenAdmin(RegistreretEksamenRepository repository)
+        {
+            _repository = repository;
+        }
+
         public void OnGet()
         {
         }
 
         public IActionResult OnPostTeacher()
         {
-            Eksamen eksamen = new Eksamen();
+            RegistreretEksamen e = new RegistreretEksamen();
 
-            eksamen.HoldId = Request.Form["teacher-holdid"];
-            eksamen.Navn = Request.Form["teacher-name"];
-            eksamen.ProeveNavn = Request.Form["teacher-proevenavn"];
-            eksamen.Form = Request.Form["teacher-form"];
-            eksamen.EksamensType = Request.Form["teacher-type"];
-            eksamen.Rolle = Request.Form["teacher-role"];
-            eksamen.Dato = Request.Form["teacher-date"];
-            eksamen.StartTid = Request.Form["teacher-starttime"];
-            eksamen.SlutTid = Request.Form["teacher-endtime"];
-            eksamen.AntalStuderende = Request.Form["teacher-antal"];
-            eksamen.HarTilsyn = Request.Form["teacher-tilsyn"] == "on";
-            eksamen.MaalGruppe = "Underviser";
+            e.HoldId = Request.Form["teacher-holdid"];
+            e.Navn = Request.Form["UnderviserNavn"];
+            e.ProeveNavn = Request.Form["teacher-proevenavn"];
+            e.Form = Request.Form["teacher-form"];
+            e.EksamensType = Request.Form["teacher-type"];
+            e.Rolle = Request.Form["teacher-role"];
 
-            EksamenRepository.Add(eksamen);
+            e.Dato = DateTime.Parse(Request.Form["teacher-date"]);
 
-            return Page();
+            e.StartTid = ParseTime(Request.Form["teacher-starttime"]);
+            e.SlutTid = ParseTime(Request.Form["teacher-endtime"]);
+
+            e.AntalStuderende = ParseNullableInt(Request.Form["teacher-antal"]);
+            e.HarTilsyn = Request.Form["teacher-tilsyn"] == "on";
+
+            e.MaalGruppe = "Lærer";
+
+            _repository.Add(e);
+            return RedirectToPage();
         }
 
         public IActionResult OnPostStudent()
         {
-            Eksamen eksamen = new Eksamen();
+            RegistreretEksamen e = new RegistreretEksamen();
 
-            eksamen.HoldId = Request.Form["student-holdid"];
-            eksamen.Navn = Request.Form["student-name"];
-            eksamen.ProeveNavn = Request.Form["student-proevenavn"];
-            eksamen.Form = Request.Form["student-form"];
-            eksamen.EksamensType = Request.Form["student-type"];
-            eksamen.Dato = Request.Form["student-date"];
-            eksamen.Tidspunkt = Request.Form["student-time"];
-            eksamen.HarTilsyn = Request.Form["student-tilsyn"] == "on";
-            eksamen.MaalGruppe = "Studerende";
+            e.HoldId = Request.Form["student-holdid"];
+            e.Navn = Request.Form["Student-name"];
+            e.ProeveNavn = Request.Form["student-proevenavn"];
+            e.Form = Request.Form["student-form"];
+            e.EksamensType = Request.Form["student-type"];
 
-            EksamenRepository.Add(eksamen);
+            e.Rolle = "Studerende";
+            e.Dato = DateTime.Parse(Request.Form["student-date"]);
+            e.Tidspunkt = ParseTime(Request.Form["student-time"]);
 
-            return Page();
+            e.HarTilsyn = Request.Form["student-tilsyn"] == "on";
+            e.MaalGruppe = "Studerende";
+
+            _repository.Add(e);
+            return RedirectToPage();
+        }
+
+        private TimeSpan? ParseTime(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return null;
+            }
+            return TimeSpan.Parse(value);
+        }
+
+        private int? ParseNullableInt(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return null;
+            }
+
+            int result;
+            if (int.TryParse(value, out result))
+            {
+                return result;
+            }
+
+            return null;
         }
     }
 }

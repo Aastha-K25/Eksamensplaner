@@ -9,6 +9,12 @@ string connectionString = builder.Configuration.GetConnectionString("DefaultConn
 
 builder.Services.AddScoped<ExamRepository>(_ => new ExamRepository(connectionString));
 builder.Services.AddScoped<EksamenDetaljerRepository>(_ => new EksamenDetaljerRepository(connectionString));
+builder.Services.AddScoped<RegistreretEksamenRepository>(sp =>
+{
+    IConfiguration config = sp.GetRequiredService<IConfiguration>();
+    string connectionString = config.GetConnectionString("DefaultConnection");
+    return new RegistreretEksamenRepository(connectionString);
+});
 
 var app = builder.Build();
 

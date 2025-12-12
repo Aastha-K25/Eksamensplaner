@@ -1,19 +1,25 @@
 using System.Collections.Generic;
-using Eksamensplaner.Data;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Eksamensplaner.Models;
-using Eksamensplaner.Data;
-
+using Eksamensplaner.Core.Models;
+using Eksamensplaner.Infrastructure.Repositories;
 
 namespace Eksamensplaner.Pages
 {
     public class SkemaStuderende : PageModel
     {
-        public List<Eksamen> EksamenForStuderende { get; set; }
+        private readonly RegistreretEksamenRepository _repository;
 
-        public void OnGet()
+        public List<RegistreretEksamen> EksamenForStuderende { get; set; }
+
+        public SkemaStuderende(RegistreretEksamenRepository repository)
         {
-            EksamenForStuderende = EksamenRepository.GetForStuderende("DAT-RO-F-V25B");
+            _repository = repository;
+            EksamenForStuderende = new List<RegistreretEksamen>();
+        }
+
+        public void OnGet(string holdId = "DAT-R0-F-V25B")
+        {
+            EksamenForStuderende = _repository.GetForStuderende(holdId);
         }
     }
 }
