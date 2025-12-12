@@ -14,7 +14,7 @@ namespace Eksamensplaner.Infrastructure.Repositories
             _connectionString = connectionString;
         }
 
-        public List<Eksamen> GetByFilter (int semester, string type)
+        public List<Eksamen> GetBySemester (int semester)
         {
             List<Eksamen> list = new List<Eksamen>();
 
@@ -25,34 +25,29 @@ namespace Eksamensplaner.Infrastructure.Repositories
                 string sql =
                     "SELECT Id, Uddannelse, Aktivitet, Semester, Type " +
                     "FROM Exams " +
-                    "Where (@semester = 0 OR Semester = @semester)" +
-                    "AND (@type = '' OR Type = @type)";
+                    "WHERE (@semester = 0 OR Semester = @semester)";
+
 
                 using (SqlCommand cmd = new SqlCommand(sql, connection))
                 {
                     cmd.Parameters.AddWithValue("@semester", semester);
 
-                    if (type == null)
-                    {
-                        type = "";
-                    }
-                    
-                    cmd.Parameters.AddWithValue("@type", type);
                     using (SqlDataReader reader = cmd.ExecuteReader())
-                    while (reader.Read())
                     {
-                        Eksamen e = new Eksamen();
-                        e.Id = (int)reader["Id"];
-                        e.Uddannelse = reader["Uddannelse"].ToString();
-                        e.Aktivitet = reader["Aktivitet"].ToString();
-                        e.Semester = (int)reader["Semester"];
-                        e.Type = reader["Type"].ToString();
+                        while (reader.Read())
+                        {
+                            Eksamen e = new Eksamen();
+                            e.Id = (int)reader["Id"];
+                            e.Uddannelse = reader["Uddannelse"].ToString();
+                            e.Aktivitet = reader["Aktivitet"].ToString();
+                            e.Semester = (int)reader["Semester"];
+                            e.Type = reader["Type"].ToString();
 
-                        list.Add(e);
+                            list.Add(e);
+                        }
                     }
                 }
             }
-
             return list;
         }
     }

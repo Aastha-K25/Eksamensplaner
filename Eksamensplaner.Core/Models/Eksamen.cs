@@ -6,6 +6,7 @@ namespace Eksamensplaner.Core.Models
         public string Uddannelse { get; set; }
         public string Aktivitet { get; set; }
         public int Semester { get; set; }
+        
         public string Type { get; set; }
     }
 }
