@@ -11,15 +11,16 @@ namespace Eksamensplaner.Pages
 
         public List<RegistreretEksamen> EksamenForStuderende { get; set; }
 
-        public SkemaStuderende(RegistreretEksamenRepository repository)
+        public SkemaStuderende(IConfiguration configuration)
         {
-            _repository = repository;
+            string connectionString = configuration.GetConnectionString("DefaultConnection");
+            _repository = new RegistreretEksamenRepository(connectionString);
             EksamenForStuderende = new List<RegistreretEksamen>();
         }
 
-        public void OnGet(string holdId = "DAT-R0-F-V25B")
+        public void OnGet()
         {
-            EksamenForStuderende = _repository.GetForStuderende(holdId);
+            EksamenForStuderende = _repository.GetForStuderende("DAT-RO-F-V25B");
         }
     }
 }

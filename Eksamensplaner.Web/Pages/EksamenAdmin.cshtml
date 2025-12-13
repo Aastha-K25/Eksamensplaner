@@ -121,10 +121,12 @@
     <h2>Registrer eksamen for studerende</h2>
     
     <form method="post" asp-page-handler="Student">
-        
+
+        <input type="hidden" name="student-rolle" value="Studerende" />
+
         <div class="field-group">
             <label for="student-holdid">Hold ID</label>
-            <input type="text" id="student-holdid" name="student-holid"placeholder="Hold ID" />
+            <input type="text" id="student-holdid" name="student-holdid" placeholder="Hold ID" />
         </div>
         
         <div class="field-group">

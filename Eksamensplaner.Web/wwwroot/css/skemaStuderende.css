@@ -12,6 +12,46 @@ body.skema {
     flex-direction: column;
     margin-bottom: 50px;
 }
+/*Eksamen css*/
+.eksamen-liste {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+}
+
+.eksamen-tabel {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.eksamen-tabel thead th {
+    text-align: left;
+    padding: 12px 14px;
+    background: #1c1c1c;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.eksamen-tabel tbody td {
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.eksamen-tabel tbody tr:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+.eksamen-tabel tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.03);
+}
+
+/* Skema css */
+
 .skema-header {
     background-color: #ffeebb;
     color: #000000;

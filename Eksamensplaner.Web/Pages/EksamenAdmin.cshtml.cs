@@ -10,9 +10,10 @@ namespace Eksamensplaner.Pages
     {
         private readonly RegistreretEksamenRepository _repository;
 
-        public EksamenAdmin(RegistreretEksamenRepository repository)
+        public EksamenAdmin(IConfiguration configuration)
         {
-            _repository = repository;
+            string connectionString = configuration.GetConnectionString("DefaultConnection");
+            _repository = new RegistreretEksamenRepository(connectionString);
         }
 
         public void OnGet()
@@ -24,24 +25,50 @@ namespace Eksamensplaner.Pages
             RegistreretEksamen e = new RegistreretEksamen();
 
             e.HoldId = Request.Form["teacher-holdid"];
-            e.Navn = Request.Form["UnderviserNavn"];
+            e.Navn = Request.Form["UnderviserNavn"]; 
             e.ProeveNavn = Request.Form["teacher-proevenavn"];
             e.Form = Request.Form["teacher-form"];
             e.EksamensType = Request.Form["teacher-type"];
             e.Rolle = Request.Form["teacher-role"];
-
-            e.Dato = DateTime.Parse(Request.Form["teacher-date"]);
-
-            e.StartTid = ParseTime(Request.Form["teacher-starttime"]);
-            e.SlutTid = ParseTime(Request.Form["teacher-endtime"]);
-
-            e.AntalStuderende = ParseNullableInt(Request.Form["teacher-antal"]);
-            e.HarTilsyn = Request.Form["teacher-tilsyn"] == "on";
-
             e.MaalGruppe = "Lærer";
 
+            // Dato (undgå crash)
+            string datoText = Request.Form["teacher-date"];
+            DateTime dato;
+            if (DateTime.TryParse(datoText, out dato))
+            {
+                e.Dato = dato;
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Du skal vælge en dato.");
+                return Page();
+            }
+            
+            TimeSpan startTid;
+            if (TimeSpan.TryParse(Request.Form["teacher-starttime"], out startTid))
+            {
+                e.StartTid = startTid;
+            }
+
+            TimeSpan slutTid;
+            if (TimeSpan.TryParse(Request.Form["teacher-endtime"], out slutTid))
+            {
+                e.SlutTid = slutTid;
+            }
+            
+            int antal;
+            if (int.TryParse(Request.Form["teacher-antal"], out antal))
+            {
+                e.AntalStuderende = antal;
+            }
+
+            
+            e.HarTilsyn = Request.Form["teacher-tilsyn"].Count > 0;
+
             _repository.Add(e);
-            return RedirectToPage();
+
+            return RedirectToPage("SkemaLaerer");
         }
 
         public IActionResult OnPostStudent()
@@ -53,41 +80,32 @@ namespace Eksamensplaner.Pages
             e.ProeveNavn = Request.Form["student-proevenavn"];
             e.Form = Request.Form["student-form"];
             e.EksamensType = Request.Form["student-type"];
-
-            e.Rolle = "Studerende";
-            e.Dato = DateTime.Parse(Request.Form["student-date"]);
-            e.Tidspunkt = ParseTime(Request.Form["student-time"]);
-
-            e.HarTilsyn = Request.Form["student-tilsyn"] == "on";
+            e.Rolle = Request.Form["student-rolle"];
             e.MaalGruppe = "Studerende";
+            
+            string datoText = Request.Form["student-date"];
+            DateTime dato;
+            if (DateTime.TryParse(datoText, out dato))
+            {
+                e.Dato = dato;
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Du skal vælge en dato.");
+                return Page();
+            }
+            
+            TimeSpan tidspunkt;
+            if (TimeSpan.TryParse(Request.Form["student-time"], out tidspunkt))
+            {
+                e.Tidspunkt = tidspunkt;
+            }
+            
+            e.HarTilsyn = Request.Form["student-tilsyn"].Count > 0;
 
             _repository.Add(e);
-            return RedirectToPage();
-        }
 
-        private TimeSpan? ParseTime(string value)
-        {
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                return null;
-            }
-            return TimeSpan.Parse(value);
-        }
-
-        private int? ParseNullableInt(string value)
-        {
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                return null;
-            }
-
-            int result;
-            if (int.TryParse(value, out result))
-            {
-                return result;
-            }
-
-            return null;
+            return RedirectToPage("SkemaStuderende");
         }
     }
 }
