@@ -80,7 +80,7 @@ namespace Eksamensplaner.Pages
             e.ProeveNavn = Request.Form["student-proevenavn"];
             e.Form = Request.Form["student-form"];
             e.EksamensType = Request.Form["student-type"];
-            e.Rolle = Request.Form["student-rolle"];
+            e.Rolle = "Studerende";
             e.MaalGruppe = "Studerende";
             
             string datoText = Request.Form["student-date"];
