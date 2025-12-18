@@ -31,8 +31,7 @@ namespace Eksamensplaner.Pages
             e.EksamensType = Request.Form["teacher-type"];
             e.Rolle = Request.Form["teacher-role"];
             e.MaalGruppe = "Lærer";
-
-            // Dato (undgå crash)
+            
             string datoText = Request.Form["teacher-date"];
             DateTime dato;
             if (DateTime.TryParse(datoText, out dato))
